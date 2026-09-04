@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#02090c">
+<title>SYNC '26 — In Sync With The Future</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="loader" class="loader">
+  <div class="loader-rays"></div>
+  <div class="loader-ring loader-ring-a"></div>
+  <div class="loader-ring loader-ring-b"></div>
+  <div class="loader-logo"><img src="assets/sync26-logo.png" alt="SYNC '26"></div>
+  <div class="loader-title">SYNC <span>'26</span></div>
+  <div class="loader-status">BOOTING FUTURE INTERFACE / 2026</div>
+  <div class="loader-track"><i></i></div>
+</div>
+
+<div class="environment" aria-hidden="true">
+  <div class="env-aurora env-a"></div>
+  <div class="env-aurora env-b"></div>
+  <div class="env-aurora env-c"></div>
+  <div class="env-grid"></div>
+  <div class="env-vignette"></div>
+  <div class="env-noise"></div>
+</div>
+<canvas id="space"></canvas>
+<div id="cursorGlow"></div>
+<div class="cursor-reticle" id="reticle"></div>
+
+<header class="nav glass">
+  <a href="#home" class="brand">
+    <img src="assets/sync26-logo.png" alt="SYNC '26">
+    <span>SYNC '26</span>
+  </a>
+  <nav class="desktop-nav">
+    <a href="#home">HOME</a>
+    <a href="#competitions">COMPETITIONS</a>
+    <a href="#about">ABOUT</a>
+    <a href="#contact">CONTACT</a>
+    <a href="#leaderboard">LEADERBOARD</a>
+  </nav>
+  <div class="nav-right">
+    <button class="nav-sound" id="soundToggle" type="button">SOUND <b>ON</b></button>
+    <span class="status-dot"><i></i> LIVE</span>
+  </div>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="hero-visual" data-depth="0.04">
+    <img src="assets/hero-portal.png" alt="Futuristic temple portal with robots">
+    <div class="hero-color"></div>
+    <div class="hero-light-sweep"></div>
+    <div class="hero-scanlines"></div>
+    <div class="hero-vignette"></div>
+    <div class="beam beam-left"></div>
+    <div class="beam beam-mid"></div>
+    <div class="beam beam-right"></div>
+    <div class="float-cube fc1"></div>
+    <div class="float-cube fc2"></div>
+    <div class="float-cube fc3"></div>
+  </div>
+
+  <div class="hero-content reveal">
+    <div class="eyebrow"><i></i> DHARMARAJA COLLEGE / ICT SOCIETY</div>
+    <div class="hero-logo-lockup" aria-label="SYNC '26">
+      <img src="assets/hero-sync26-logo.png" alt="SYNC '26" class="hero-logo hero-logo-main">
+      <img src="assets/hero-sync26-logo.png" alt="" class="hero-logo hero-logo-glitch glitch-a" aria-hidden="true">
+      <img src="assets/hero-sync26-logo.png" alt="" class="hero-logo hero-logo-glitch glitch-b" aria-hidden="true">
+      <span class="logo-glitch-line gl1"></span><span class="logo-glitch-line gl2"></span>
+    </div>
+    <div class="hero-rule"></div>
+    <div class="hero-sub">IN <em>SYNC</em> WITH THE FUTURE</div>
+    <p class="hero-copy">A cinematic inter-school technology experience built around intelligence, creativity, design, gaming and digital culture.</p>
+    <div class="hero-buttons">
+      <a href="#competitions" class="action-btn primary magnetic">ENTER THE PORTAL <b>↗</b></a>
+      <a href="#about" class="action-btn secondary magnetic">EXPLORE SYNC <b>↓</b></a>
+    </div>
+    <div class="hero-stats">
+      <div><strong>08</strong><span>COMPETITIONS</span></div>
+      <div><strong>06–13</strong><span>GRADES / CORE EVENTS</span></div>
+      <div><strong>01</strong><span>FUTURE SIGNAL</span></div>
+    </div>
+  </div>
+
+  <div class="hero-console glass reveal" data-depth="0.08">
+    <div class="console-head"><span>SYNC CORE // STATUS</span><b>ONLINE</b></div>
+    <div class="equalizer"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="console-row"><span>NETWORK</span><b>CONNECTED</b></div>
+    <div class="console-row"><span>ENERGY</span><b>98.7%</b></div>
+    <div class="console-row"><span>PROTOCOL</span><b>24A4BD</b></div>
+    <div class="console-wave"></div>
+  </div>
+
+  <div class="hero-corner c-left glass"><small>PORTAL</small><b>01 / 04</b><span>ACTIVE SCENE</span></div>
+  <div class="hero-corner c-right glass"><small>COORD</small><b>LK / 2026</b><span>SYNC SIGNAL</span></div>
+  <div class="hero-scroll"><span></span>SCROLL / DISCOVER</div>
+</section>
+
+<section id="competitions" class="section competitions">
+  <div class="section-heading reveal">
+    <div>
+      <p class="kicker">THE ARENAS</p>
+      <h2>CHOOSE YOUR <em>PROTOCOL</em></h2>
+    </div>
+    <p>Every event lives inside the same animated glass system. Open any card for the full competition dossier, rules and registration flow.</p>
+  </div>
+  <div id="competitionGrid" class="competition-grid"></div>
+  <div class="energy-divider reveal"><i></i><span>SYNC '26 / ALL SYSTEMS ONLINE</span><i></i></div>
+</section>
+
+<section id="about" class="section about">
+  <div class="about-visual reveal" data-depth="0.03">
+    <div class="portal-ring p1"></div>
+    <div class="portal-ring p2"></div>
+    <div class="portal-ring p3"></div>
+    <div class="portal-orbit po1"></div>
+    <div class="portal-orbit po2"></div>
+    <div class="portal-orbit po3"></div>
+    <div class="portal-center">
+      <img src="assets/sync26-logo.png" alt="SYNC '26">
+      <span>ACCESS GRANTED</span>
+      <small>CORE // 26</small>
+    </div>
+    <div class="portal-label glass"><span>SYNC CORE</span><b>STABLE</b></div>
+    <div class="portal-cross cross-a"></div><div class="portal-cross cross-b"></div>
+  </div>
+  <div class="about-content reveal">
+    <p class="kicker">THE CONCEPT</p>
+    <h2>NOT JUST<br><em>A WEBSITE.</em></h2>
+    <p>SYNC '26 is designed as a living digital portal. Glass surfaces respond to movement, the cyan signal travels through every layer and the world around the interface is always in motion.</p>
+    <div class="about-grid">
+      <div class="glass info-tile"><span>01</span><b>COMPETE</b><small>Algorithms, quiz, gaming, design and more.</small></div>
+      <div class="glass info-tile"><span>02</span><b>CREATE</b><small>Visuals, interfaces, code and digital stories.</small></div>
+      <div class="glass info-tile"><span>03</span><b>CONNECT</b><small>Students, schools and the ICT community.</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="section sequence">
+  <div class="section-heading reveal">
+    <div><p class="kicker">THE FLOW</p><h2>HOW THE <em>PORTAL</em> WORKS</h2></div>
+  </div>
+  <div class="sequence-line"><span></span></div>
+  <div class="sequence-grid">
+    <article class="step glass reveal"><div>01</div><h3>DISCOVER</h3><p>Enter the site and explore the animated event universe.</p></article>
+    <article class="step glass reveal"><div>02</div><h3>OPEN</h3><p>Choose a competition and inspect its full dossier.</p></article>
+    <article class="step glass reveal"><div>03</div><h3>REGISTER</h3><p>Submit your details through the dedicated glass form.</p></article>
+    <article class="step glass reveal"><div>04</div><h3>SYNC</h3><p>Join the official channel and get ready for event day.</p></article>
+  </div>
+</section>
+
+<section id="leaderboard" class="section leaderboard">
+  <div class="section-heading reveal">
+    <div><p class="kicker">LIVE DATA</p><h2>THE <em>LEADERBOARD</em></h2></div>
+    <span class="feed-status"><i></i> LIVE FEED</span>
+  </div>
+  <div class="leaderboard-shell glass reveal">
+    <div class="leader-head"><span>RANK</span><span>CONTESTANT / TEAM</span><span>EVENT</span><span>SCORE</span></div>
+    <div id="leaderRows"></div>
+  </div>
+  <div class="leader-foot reveal"><span>LIVE DATA CONNECTION READY</span><span>OFFICIAL RESULTS CAN REPLACE THE DEMO DATA</span></div>
+</section>
+
+<section id="contact" class="section contact">
+  <div class="contact-atmosphere"></div>
+  <div class="contact-inner reveal">
+    <p class="kicker">HAVE QUESTIONS?</p>
+    <h2>GET IN<br><em>TOUCH.</em></h2>
+    <p class="contact-copy">Want to know more about the competitions or registration process? Reach out through the official SYNC '26 contacts below.</p>
+    <div class="contact-grid">
+      <a class="contact-card glass magnetic" href="tel:+94702645851"><small>EVENT CONTACT</small><b>MUDITHA BRO</b><span>+94 70 264 5851</span><em>↗</em></a>
+      <a class="contact-card glass magnetic" href="tel:+94714906145"><small>EVENT CONTACT</small><b>NETHUN THE EDITOR</b><span>+94 71 490 6145</span><em>↗</em></a>
+      <a class="contact-card glass magnetic" href="mailto:drck.ictsociety@gmail.com"><small>COMMUNITY ENGAGEMENT</small><b>EMAIL</b><span>drck.ictsociety@gmail.com</span><em>↗</em></a>
+      <a class="contact-card glass magnetic" href="https://wa.link/05138r" target="_blank" rel="noopener"><small>OFFICIAL CHANNEL</small><b>WHATSAPP</b><span>OPEN CONTACT CHAT</span><em>↗</em></a>
+    </div>
+  </div>
+</section>
+
+<section class="section final">
+  <div class="final-scene">
+    <div class="final-glow"></div>
+    <div class="final-ring fr1"></div><div class="final-ring fr2"></div><div class="final-ring fr3"></div>
+  </div>
+  <div class="final-inner reveal">
+    <img class="final-logo" src="assets/sync26-logo.png" alt="SYNC '26">
+    <p class="kicker">THE SIGNAL IS LIVE</p>
+    <h2>READY TO<br><em>SYNC?</em></h2>
+    <div class="hero-buttons final-buttons">
+      <a href="#competitions" class="action-btn primary magnetic">VIEW COMPETITIONS <b>↗</b></a>
+      <a href="https://chat.whatsapp.com/IaBJyTRhZcACMFKUOrYndg" target="_blank" rel="noopener" class="action-btn secondary magnetic">JOIN WHATSAPP <b>↗</b></a>
+    </div>
+    <img class="partner-logo" src="assets/school-ict-logos.png" alt="Dharmaraja College ICT Society">
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <span>© 2026 SYNC '26</span>
+  <span>DHARMARAJA COLLEGE × ICT SOCIETY</span>
+  <span>IN SYNC WITH THE FUTURE</span>
+</footer>
+
+<!-- EVENT DOSSIER -->
+<div id="eventModal" class="modal-shell" aria-hidden="true">
+  <div class="modal-backdrop"></div>
+  <article class="event-dossier glass">
+    <button class="modal-x" id="closeEvent" type="button">×</button>
+    <div id="eventContent"></div>
+  </article>
+</div>
+
+<!-- REGISTRATION -->
+<div id="registerModal" class="modal-shell" aria-hidden="true">
+  <div class="modal-backdrop"></div>
+  <article class="register-shell glass">
+    <button class="modal-x" id="closeRegister" type="button">×</button>
+    <div class="register-head">
+      <p class="kicker">REGISTRATION PROTOCOL</p>
+      <h2 id="registerHeading">REGISTER</h2>
+      <p>Inter-School and Intra-School participation are both available. Complete every required field.</p>
+    </div>
+    <form id="registrationForm">
+      <input type="hidden" name="event" id="registrationEvent">
+      <div class="form-grid">
+        <label>Participation Type *
+          <select name="participationType" required>
+            <option value="">Select type</option>
+            <option>Inter-School</option>
+            <option>Intra-School</option>
+          </select>
+        </label>
+        <label>Full Name *
+          <input name="fullName" required autocomplete="name" placeholder="Your full name">
+        </label>
+        <label>Grade *
+          <select name="grade" required>
+            <option value="">Select grade</option>
+            <option>6</option><option>7</option><option>8</option><option>9</option>
+            <option>10</option><option>11</option><option>12</option><option>13</option>
+          </select>
+        </label>
+        <label>Email Address *
+          <input name="email" type="email" required autocomplete="email" placeholder="name@email.com">
+        </label>
+        <label>Contact Number *
+          <input name="contactNumber" required autocomplete="tel" placeholder="+94">
+        </label>
+        <label>School
+          <input name="school" autocomplete="organization" placeholder="School name">
+        </label>
+      </div>
+      <button class="action-btn primary submit-registration" type="submit"><span>REGISTER NOW</span><b>↗</b></button>
+      <p id="registrationNote" class="form-note">READY / GOOGLE SHEETS ENDPOINT CAN BE CONNECTED IN app.js</p>
+    </form>
+    <div id="registrationSuccess" class="registration-success">
+      <div class="success-orb">✓</div>
+      <h3 id="successTitle">REGISTRATION COMPLETE</h3>
+      <p>Thank you for registering with SYNC '26. Your registration has been submitted to the event system.</p>
+      <a class="action-btn primary magnetic" href="https://chat.whatsapp.com/IaBJyTRhZC5ACMFKUOrYndg" target="_blank" rel="noopener">JOIN WHATSAPP GROUP <b>↗</b></a>
+    </div>
+  </article>
+</div>
+
+<!-- AI ASSISTANT -->
+<button id="aiLauncher" class="ai-launcher glass" type="button" aria-label="Open SYNC AI">
+  <span class="ai-pulse"></span><span class="ai-orb">AI</span><b>SYNC AI</b><small>ASK / REGISTER</small>
+</button>
+<aside id="aiPanel" class="ai-panel glass" aria-hidden="true">
+  <div class="ai-header">
+    <div><span class="ai-mini">SYNC AI</span><b>EVENT ASSISTANT</b></div>
+    <button id="closeAI" type="button">×</button>
+  </div>
+  <div id="aiMessages" class="ai-messages">
+    <div class="ai-message bot">Hey. I'm SYNC AI. Ask me about competitions, rules, registration, WhatsApp or the event.</div>
+  </div>
+  <div class="ai-chips">
+    <button data-question="What competitions are available?">COMPETITIONS</button>
+    <button data-question="How do I register?">REGISTER</button>
+    <button data-question="Tell me about ASPECT">ASPECT</button>
+    <button data-question="Tell me about the quiz">QUIZ</button>
+  </div>
+  <form id="aiForm" class="ai-form">
+    <input id="aiInput" placeholder="Ask SYNC AI..." autocomplete="off">
+    <button type="submit">↗</button>
+  </form>
+</aside>
+
+<!-- AUDIO CORE -->
+<div class="audio-core glass">
+  <div><small>AUDIO CORE</small><b id="audioState">READY</b></div>
+  <label>MUSIC <input id="musicVolume" type="range" min="0" max="1" step=".01" value=".35"></label>
+  <label>SFX <input id="sfxVolume" type="range" min="0" max="1" step=".01" value=".7"></label>
+</div>
+
+<div id="toast"></div>
+<audio id="bgMusic" src="assets/music.mp3" loop preload="auto"></audio>
+<script src="app.js"></script>
+</body>
+</html>
